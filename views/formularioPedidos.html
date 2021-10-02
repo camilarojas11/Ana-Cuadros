@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pedidos de cuadros, pedido de arte, cotizacion cuadro, cotizacion">
+    <meta name="description" content="Formulario para pedidos personalizados, ya sea arte abstracto o moderno.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <title>Formulario para Pedidos</title>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="container-fluid  container-fluid--transparent px-0">
+            <nav
+                class="navbar navbar-expand-md navbar-light bg-transparent px-0 py-0 border border-top-0 border-start-0 border-end-0">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../assets/logo_2.png" alt="logo">
+                    </a>
+                    <button type="button" class="navbar-toggler mx-2">
+                        <span class="navbar-toggler-icon" data-bs-toggle="collapse"
+                            data-bs-target="#menuNavegacion"></span>
+                    </button>
+                    <div id="menuNavegacion" class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link text-dark mx-2">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./galeria.html" class="nav-link text-dark mx-2">Galeria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./about.html" class="nav-link text-dark mx-2">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./contacto.html" class="nav-link text-dark mx-2">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-pedidos">
+            <h2 data-aos="fade-up">¿Tenes una idea y queres plasmarlo en un cuadro?</h2>
+            <h3 data-aos="fade-up">
+                Completa el siguiente formulario con tus ideas, además podras adjuntar
+                la imagen que quieras para el proyecto.
+            </h3>
+            <div>
+                <!-- Aca debo ingresar el codigo para formularios -->
+                <form name="formulario" method="post" action="" enctype="multipart/form-data" data-aos="zoom-in"
+                    data-aos-delay="200">
+                    <p>FORMULARIO</p>
+                    <input type="text" name="user_name" placeholder="Nombre" required>
+                    <input type="email" name="user_mail" placeholder="Email" required>
+                    <select class="opSelect" name="tipo">
+                        <option value="Seleccion" selected> Seleccione una opción </option>
+                        <option value="Oleo"> En Óleo </option>
+                        <option value="Acrilico"> En Acrílico </option>
+                        <option value="Puntillismo"> Estilo Puntillismo </option>
+                    </select>
+                    <textarea name="user_message"
+                        placeholder="Escríbenos sobre tu idea (coloca todos los detalles que creas necesarios)"></textarea>
+                    <p class="adImagen"> Aquí puede adjuntar una imágen (en caso de ser necesario)</p>
+                    <input type="file" class="archivo" accept=".jpg,.jpeg.png,.svg" multiple>
+                    <input type="submit" value="Enviar Formulario" class="btn-grad--contact">
+                    <input type="reset" value="Limpiar Formulario" class="btn-grad--contact">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="contenedorFooter">
+            <section class="logo" data-aos="zoom-in">
+                <img src="../assets/logo_2.png" alt="Ana Teran Cuadros">
+            </section>
+            <section class="newsletter" data-aos="zoom-in">
+                <h3>Suscribite a nuestro newsletter</h3>
+                <form>
+                    <input type="text" class="newsletterInput" placeholder="Ingresa tu mail">
+                    <input type="submit" class="newsletterSubmit" value="Suscribir">
+                </form>
+                <div class="socialMedia">
+                    <p>Síguenos en:</p>
+                    <a target="_blank" href="https://www.facebook.com/anamaria.teran.18"> <i
+                            class='socialIcono bx bxl-facebook-circle'></i></a>
+                    <a target="_blank" href="https://www.instagram.com/pinturasanushka/?hl=es-la"> <i
+                            class='socialIcono bx bxl-instagram-alt'></i></a>
+                    <i class='socialIcono bx bxl-pinterest'></i>
+                </div>
+            </section>
+        </div>
+        <div class="contact">
+            <div class="itemContact">
+                <i class='bx bx-copyright contactIcono'></i>
+                <p class="contactoTitulo">Ana Teran Cuadros</p>
+            </div>
+            <div class="itemContact">
+                <i class='bx bx-mail-send contactIcono'></i><br>
+                <a class="contactoTitulo"
+                    href="mailto:anitamariateran@gmail.com?subject=Contacto%20a%20trav%C3%A9s%20de%20la%20pagina">anitamariateran@gmail.com</a>
+            </div>
+            <div class="itemContact">
+                <i class='bx bxl-whatsapp contactIcono'></i> <br>
+                <a class="contactoTitulo" target="_blank" href="https://wa.me/5491163536709">+54 9 11 6353-6709</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1000
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
