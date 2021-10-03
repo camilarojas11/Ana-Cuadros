@@ -20,7 +20,7 @@ a{
 }
 
 .point{
-    color: $secondary-color;
+    color: map-get($colores , secondary-color );
 }
 
 @each $heading, $size in $headings {
