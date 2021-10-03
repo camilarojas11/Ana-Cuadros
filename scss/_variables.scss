@@ -1,0 +1,22 @@
+$headings: (h1: 3.5rem,
+    h2: 2.5rem,
+    h3: 2rem,
+    p: 1.5rem,
+);
+
+$colores: (#f5f5f5, #ffffff, #fafafa, 
+    #c2c2c2, #ffa052, #f9d423, #ff4e50, 
+    #000000, rgba(0, 0, 0, 0.384), 
+    linear-gradient(to right, #f9d423 0%, #ff4e50 50%, #f9d423 100%)
+);
+
+$primary-color:nth($colores, 1 );
+$primary-color-light:nth($colores, 2);
+$primary-color-light-2:nth($colores, 3);
+$primary-color-dark:nth($colores, 4);
+$secondary-color: nth($colores, 5);
+$secondary-color-light:nth($colores, 6);
+$secondary-color-dark:nth($colores, 7);
+$color-texto-1: nth($colores, 8);
+$color-blend-mode:nth($colores, 9);
+$gradient-color: nth($colores, 10);
