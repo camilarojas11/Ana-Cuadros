@@ -1,20 +1,44 @@
-$headings: (h1: 3.5rem,
-    h2: 2.5rem,
-    h3: 2rem,
-    p: 1.5rem,
+//Mapas para los headings
+$headings: (
+    h1: 3rem,
+    h2: 2.6rem,
+    h3: 2.2rem,
+    h4: 1.8rem,
+    p: 1.4rem,
 );
 
+//Mapas para los colores la pagina
 $colores: (
     primary-color: #f5f5f5,
     primary-color-light: #ffffff,
-    primary-color-light-2: #fafafa, 
+    primary-color-light-2: #fafafa,
     primary-color-dark: #c2c2c2,
     secondary-color: #ffa052,
     secondary-color-light: #f9d423,
     secondary-color-dark: #ff4e50,
     color-texto-1: #000000,
-    color-blend-mode: rgba(0, 0, 0, 0.384), 
-    gradient-color: linear-gradient(to right, #f9d423 0%, #ff4e50 50%, #f9d423 100%)
+    color-blend-mode: rgba(0, 0, 0, 0.384),
+    gradient-color: linear-gradient(to right, #f9d423 0%, #ff4e50 50%, #f9d423 100%),
+    gradient-color-h3: linear-gradient(to right, #f9d423 0%, #ffa052 25%, #ff4e50 50%, #ffa052 75%, #f9d423 100%),
+    gradient-color-form: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%),
 );
 
+$transition: all 0.5s;
 
+// //Mapas para background-image
+// $back-img: (background-size: cover,
+//     background-position: top center,
+//     background-repeat: no-repeat,
+//     background-attachment: fixed,
+//     background-blend-mode: soft-light,
+//     background-color: map-get($colores, color-blend-mode));
+
+
+// //Mapas para los links del nav:hover
+// $nav-hover: (
+//     font-weight: bold,
+//     background: map-get($colores, gradient-color),
+//     -webkit-background-clip: text,
+//     background-clip: text,
+//     -webkit-text-fill-color: transparent,
+// );
