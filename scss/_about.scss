@@ -61,9 +61,9 @@
     blockquote {
 
         p {
-            font-size: 2rem;
+            font-size: 2.3rem;
             font-style: italic;
-            font-weight: bold;
+            font-weight: bolder;
             animation: fluido 10s ease-in-out infinite;
             background: map-get($colores, gradient-color-h3);
             background-size: 300%;
