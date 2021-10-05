@@ -488,11 +488,10 @@ header {
 
     h3 {
         @include textos (rgba(0, 0, 0, 0.432));
-        font-size: 2rem;
     }
 
     p {
-        @include textos (map-get($colores, color-texto-1));
+        @include textos (rgba(0, 0, 0, 0.432));
         margin: 0;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -512,5 +511,56 @@ header {
     textarea {
         min-height: 100px;
         max-height: 200px;
+    }
+}
+
+/*************************************************************************************************/
+//<------- Formulario de Pedidos -------------->
+
+.container-pedidos {
+    @include flex (wrap, center, center);
+    flex-direction: column;
+    text-align: center;
+    width: 95vw;
+    margin: 0 auto;
+    padding: 50px;
+
+    h2 {
+        @include textos(map-get($colores, color-texto-1));
+    }
+
+    h3 {
+        @include textos (rgba(0, 0, 0, 0.432));
+    }
+
+    form {
+        @include form (50%, 1.5rem, 7px);
+        box-sizing: border-box;
+        margin-top: 20px;
+
+        p {
+            @include textos (rgba(0, 0, 0, 0.432));
+            margin: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea,
+        select,
+        .adImagen,
+        .archivo {
+            @include input-textarea();
+            margin-bottom: 20px;
+            padding: 7px;
+            box-sizing: border-box;
+            font-size: 17px;
+        }
+
+        textarea {
+            min-height: 100px;
+            max-height: 200px;
+            max-width: 100%;
+        }
     }
 }
