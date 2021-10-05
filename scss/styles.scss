@@ -1,30 +1,516 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&display=swap');
 @import "variables";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family:'Montserrat', sans-serif;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: map-get($colores, primary-color);
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     display: inline-block;
 }
 
-.point{
-    color: map-get($colores , secondary-color );
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
 }
 
-@each $heading, $size in $headings {
+.point {
+    color: map-get($colores, secondary-color);
+}
+
+@each $heading,
+$size in $headings {
     #{$heading} {
         font-size: $size;
+    }
+}
+
+
+/***********************************************************************************************/
+//<----------------- Header --------------------->
+
+.hero-index {
+    @include back-img (top center, (map-get($colores, color-blend-mode)));
+    background-image: url(../assets/fondo_img/fondo_l.jpg);
+    width: 100%;
+    color: map-get($colores, primary-color-light);
+
+    .navbar-nav {
+        .nav-item--white {
+            color: map-get($colores, primary-color-light);
+        }
+
+        .nav-link {
+            @include nav-link;
+
+            &:hover {
+                @include nav-hover;
+            }
+        }
+    }
+
+    .hero {
+        @include flex (wrap, center, space-between);
+        height: $vh-100;
+
+        h1 {
+            font-weight: 300;
+
+            .hero__textos--gradient {
+                font-weight: bold;
+                @include animation-text (map-get($colores, gradient-color));
+            }
+        }
+
+        p {
+            font-weight: 200;
+
+            .hero__textos--bold {
+                font-weight: 500;
+            }
+        }
+
+    }
+
+}
+
+//<------------- Header para el resto de la paginas -------------->
+
+header {
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                @include nav-link;
+
+                &:hover {
+                    @include nav-hover;
+                }
+            }
+        }
+    }
+}
+
+//********************************************************************************************************
+//<--------------- Index ---------------->
+
+@mixin sizes ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin transform-transition ($transform, $transition) {
+    transform: $transform;
+    transition: $transition;
+}
+
+@mixin borders ($border, $border-radius) {
+    border: $border;
+    border-radius: $border-radius;
+}
+
+
+// <-------------- 1ra SECTION ------------> 
+
+.container-introduccion {
+    height: 90vh;
+}
+
+//<-------------- 2da SECTION ------------->
+
+.container {
+
+    .box {
+        height: 70vh;
+
+        .box__titulo {
+            color: map-get($colores, secondary-color);
+            text-align: center;
+
+            h3 {
+                @include animation-text(map-get($colores, gradient-color-2));
+                font-weight: 400;
+            }
+        }
+
+        .box__imagen {
+            @include transform-transition(translateY(5px), all 0.5s);
+            position: relative;
+            max-width: 336px;
+            margin: auto;
+
+            &:hover {
+                @include transform-transition(translateY(0px), all ease-out 0.5s);
+                @include borders(none, 10px);
+                @include box-shadow ();
+            }
+
+            .box__img {
+                display: block;
+                @include sizes(100%, 220px);
+                @include borders(none, 10px);
+            }
+
+            .box__descripcion {
+                @include flex (wrap, center, center);
+                flex-direction: column;
+                position: absolute;
+                @include sizes (100%, 100%);
+                @include borders(none, 10px);
+                font-size: 1rem;
+                color: map-get($colores, primary-color);
+                padding: 10px;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .7);
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.30s;
+
+                &:hover {
+                    opacity: 1;
+                    transition: 0.30s;
+                }
+
+                button {
+                    @include borders(none, 5px);
+
+                    .btn-grad--modif {
+                        padding: 5px 10px;
+                        background-color: map-get($colores, gradient-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//<--------------3ra Section -------------->
+
+.container-fluid--form {
+    @include back-img (bottom center, rgba(214, 213, 213, 0.815));
+    height: 100vh;
+    background-image: url(../assets/fondo_img/fondo_g.jpg);
+}
+
+
+//<-------------- 4ta Section ---------------->
+
+.container-fluid--opinion {
+    height: $vh-100;
+
+
+    .container {
+
+        .img-testimonio {
+            @include borders(4px solid map-get($colores, secondary-color), 50%);
+            margin: 1rem auto;
+        }
+
+        h3 {
+            @include animation-text(map-get($colores, gradient-color-2));
+        }
+    }
+}
+
+//************************************************************************************************************
+
+//<----------------- Galeria --------------->
+
+.container-link {
+    margin: 2rem;
+
+    .nav-pills {
+        .nav-item {
+            font-weight: 500;
+            letter-spacing: 2px;
+            padding: 0.1rem;
+
+            .active {
+                background: map-get($colores, gradient-color);
+            }
+
+            .second {
+                color: map-get($colores, color-texto-1);
+
+                &:hover {
+                    background: map-get($colores, gradient-color);
+                    background-position: right center;
+                    color: map-get($colores, primary-color);
+                }
+            }
+        }
+    }
+}
+
+
+.container-galeria {
+    @include grid((repeat(5, 1fr)), 12.5rem, 0.3rem);
+    margin: 1rem;
+
+
+    .container-galeria__item {
+        overflow: hidden;
+
+        &:nth-child(2) {
+            grid-column-start: span 2;
+        }
+
+        &:nth-child(3) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(4) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(6) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(9) {
+            grid-column-start: span 2;
+        }
+
+        &:nth-child(11) {
+            grid-column-start: span 2;
+        }
+
+        &:nth-child(12) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(17) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(19) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(23) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(26) {
+            grid-row-start: span 2;
+        }
+
+        &:nth-child(28) {
+            grid-column-start: span 2;
+        }
+
+    }
+
+    .item-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s;
+
+        &:hover {
+            @include transform-transition(scale(1.1), all 0.5s);
+        }
+    }
+}
+
+
+//<-------------- Acrilico - Oleo - Puntillismo ----------------------->
+
+
+.title-paint {
+    @include animation-text (linear-gradient(to right, #e14fad 0%, #f9d423 100%));
+    margin: 2.5rem;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.container-breadcrumb {
+    margin: 1rem;
+}
+
+.container-cards {
+    @include grid(repeat(auto-fill, minmax(250px, 1fr)), auto, 20px);
+    margin: 0 auto;
+    max-width: 1100px;
+    padding-top: 30px;
+
+    .card {
+        background-color: map-get($colores, primary-color-light-2);
+        border-color: map-get($colores, primary-color-light);
+        box-shadow: 20px 20px 60px #d5d5d5, -20px -20px 60px #ffffff;
+        transition: all 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            @include transform-transition(translateY(-1rem), all 0.5s);
+        }
+
+        .card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-radius: inherit;
+        }
+
+        figcaption {
+            line-height: 1.5;
+            padding: 15px;
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
+.container-form {
+    width: 100%;
+    margin: 4rem auto;
+
+
+    .form__header {
+        padding: 0.5rem;
+
+        h2 {
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+    }
+
+    form {
+        @include form (90%, 1.5rem, 3px);
+        max-width: 650px;
+        border-radius: 3px;
+
+        .form-label {
+            display: block;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .form-input,
+        .form-textarea {
+            @include input-textarea ();
+            border-bottom: 1px solid map-get($colores, primary-color-dark);
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+    }
+}
+
+//**************************************************************************************************************
+//<-------------------- ABOUT ------------------>
+
+.contenedor__about {
+    @include back-img (center center, rgba(0, 0, 0, .7));
+    @include about ();
+    @include flex (wrap, center, center);
+
+
+    .container--primary {
+        background-color: map-get($colores, primary-color);
+        color: map-get($colores, color-texto-1);
+    }
+
+    .contenedor__about__img {
+        @include border-img()
+    }
+}
+
+.contenedor__about__carrusel {
+    height: 100vh;
+    text-align: center
+}
+
+
+.frase {
+    height: 75vh;
+    text-align: center;
+
+    blockquote {
+        p {
+            @include animation-text ((map-get($colores, gradient-color-2)));
+            font-size: 2.3rem;
+            font-style: italic;
+            font-weight: bolder;
+        }
+    }
+}
+
+/*********************************************************************************************************/
+//<------------------  Contacto  -------------------------->
+
+
+.container-contacto {
+    @include flex (wrap, center, center);
+    flex-direction: column;
+    width: 95vw;
+    margin: 0 auto;
+    padding: 50px;
+
+    .form__contacto {
+        @include form (50%, 10px 20px, 7px);
+        box-sizing: border-box;
+        margin-top: 20px;
+        border-radius: 7px;
+    }
+
+    h2 {
+        @include textos(map-get($colores, color-texto-1));
+    }
+
+    h3 {
+        @include textos (rgba(0, 0, 0, 0.432));
+        font-size: 2rem;
+    }
+
+    p {
+        @include textos (map-get($colores, color-texto-1));
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+
+    input,
+    textarea,
+    select {
+        @include input-textarea();
+        margin-bottom: 20px;
+        padding: 7px;
+        box-sizing: border-box;
+        font-size: 17px;
+    }
+
+    textarea {
+        min-height: 100px;
+        max-height: 200px;
     }
 }
