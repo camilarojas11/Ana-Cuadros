@@ -1,6 +1,5 @@
 //Mapas para los headings
-$headings: (
-    h1: 3rem,
+$headings: (h1: 3rem,
     h2: 2.6rem,
     h3: 2.2rem,
     h4: 1.8rem,
@@ -8,8 +7,7 @@ $headings: (
 );
 
 //Mapas para los colores la pagina
-$colores: (
-    primary-color: #f5f5f5,
+$colores: (primary-color: #f5f5f5,
     primary-color-light: #ffffff,
     primary-color-light-2: #fafafa,
     primary-color-dark: #c2c2c2,
@@ -19,26 +17,181 @@ $colores: (
     color-texto-1: #000000,
     color-blend-mode: rgba(0, 0, 0, 0.384),
     gradient-color: linear-gradient(to right, #f9d423 0%, #ff4e50 50%, #f9d423 100%),
-    gradient-color-h3: linear-gradient(to right, #f9d423 0%, #ffa052 25%, #ff4e50 50%, #ffa052 75%, #f9d423 100%),
+    gradient-color-2: linear-gradient(to right, #f9d423 0%, #ffa052 25%, #ff4e50 50%, #ffa052 75%, #f9d423 100%),
     gradient-color-form: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%),
+    gradient-color-form-paint: linear-gradient(120deg, #f6d365 0%, #fda085 100%),
 );
 
-$transition: all 0.5s;
 
-// //Mapas para background-image
-// $back-img: (background-size: cover,
-//     background-position: top center,
-//     background-repeat: no-repeat,
-//     background-attachment: fixed,
-//     background-blend-mode: soft-light,
-//     background-color: map-get($colores, color-blend-mode));
+$vh-100: 100vh;
+
+//Box-shadow
+@mixin box-shadow {
+    box-shadow: -1px -5px 11px 6px rgba(164, 148, 148, 0.33);
+    -webkit-box-shadow: -1px -5px 11px 6px rgba(164, 148, 148, 0.33);
+    -moz-box-shadow: -1px -5px 11px 6px rgba(164, 148, 148, 0.33);
+}
+
+//Box-shadow Form
+@mixin box-shadow-form {
+    box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
+}
+
+//Mixin para background-image
+@mixin back-img ($background-position, $color) {
+    background-position: $background-position;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
+    background-color: $color;
+}
+
+//Mixin nav-hover y estilo del texto en nav
+@mixin nav-hover {
+    font-weight: bold;
+    background: map-get($colores, gradient-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin nav-link {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
 
 
-// //Mapas para los links del nav:hover
-// $nav-hover: (
-//     font-weight: bold,
-//     background: map-get($colores, gradient-color),
-//     -webkit-background-clip: text,
-//     background-clip: text,
-//     -webkit-text-fill-color: transparent,
-// );
+//Mixin para animacion de headings y <p>
+@mixin animation-text ($background) {
+    animation: fluido 10s ease-in-out infinite;
+    background: $background;
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @keyframes fluido {
+        0% {
+            background-position: 0 50%
+        }
+
+        50% {
+            background-position: 100% 50%
+        }
+
+        100% {
+            background-position: 0 50%
+        }
+    }
+}
+
+
+//Mixin para display-flex
+@mixin flex ($flex-wrap, $align, $justify) {
+    flex-wrap: $flex-wrap;
+    align-items: $align;
+    justify-content: $justify;
+    display: flex;
+}
+
+//Mixin para grid
+@mixin grid ($grid-t-columns, $grid-a-rows, $gap) {
+    display: grid;
+    grid-template-columns: $grid-t-columns;
+    grid-auto-rows: $grid-a-rows;
+    gap: $gap;
+}
+
+
+
+//Botones de la pagina
+@mixin btn-grad ($margin, $padding, $border-radius, $back-img, $display, $text-transform) {
+    display: $display;
+    margin: $margin;
+    padding: $padding;
+    border-radius: $border-radius;
+    background-image: $back-img;
+    background-size: 200% auto;
+    transition: 0.5s;
+    text-align: center;
+    color: map-get($colores, primary-color);
+    font-weight: 500;
+    border: none;
+
+    &:hover {
+        text-transform: $text-transform;
+        background-position: right center;
+        color: map-get($colores, color-texto-1);
+
+    }
+}
+
+.btn-grad {
+    @include btn-grad(10px, 15px 20px, 10px, map-get($colores, gradient-color), inline-block, none);
+}
+
+.btn-grad--card {
+    @include btn-grad(0px, 5px 10px, 5px, map-get($colores, gradient-color), inline-block, none);
+}
+
+.btn-grad--submit {
+    @include btn-grad(0, 15px 45px, 10px, map-get($colores, gradient-color-form), block, uppercase);
+    width: 100%;
+    letter-spacing: 5px;
+}
+
+.btn-grad--contact {
+    @include btn-grad(0, 15px 45px, 10px, map-get($colores, gradient-color-form), block, uppercase);
+}
+
+
+//Form para los cuadros
+@mixin form ($width, $padding, $border-radius) {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    width: $width;
+    padding: $padding;
+    border-radius: $border-radius;
+    margin: auto;
+    box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
+}
+
+@mixin input-textarea {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+
+//Bordes para <img> del about
+@mixin border-img () {
+    border: 2px solid map-get($colores, primary-color);
+    border-radius: 5px;
+}
+
+@mixin about {
+    background-image: url(../assets/fondo_img/fondo_e.jpg);
+    padding: 10rem;
+    margin: 0 auto;
+    text-align: center;
+    color: map-get($colores, primary-color);
+}
+
+//Weight en los textos de Contacto
+@mixin textos ($color) {
+    color: $color;
+    text-align: center;
+
+    @if $color==rgba(0, 0, 0, 0.432) {
+        font-weight: 300;
+    }
+
+    @else {
+        font-weight: 400;
+    }
+}
