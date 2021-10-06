@@ -20,6 +20,7 @@ $colores: (primary-color: #f5f5f5,
     gradient-color-2: linear-gradient(to right, #f9d423 0%, #ffa052 25%, #ff4e50 50%, #ffa052 75%, #f9d423 100%),
     gradient-color-form: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%),
     gradient-color-form-paint: linear-gradient(120deg, #f6d365 0%, #fda085 100%),
+    gradient-color-error: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%),
 );
 
 
@@ -146,6 +147,10 @@ $vh-100: 100vh;
 
 .btn-grad--contact {
     @include btn-grad(0, 15px 45px, 10px, map-get($colores, gradient-color-form), block, uppercase);
+}
+
+.btn-grad--error {
+    @include btn-grad(10px, 15px 20px, 10px, map-get($colores, gradient-color-error), inline-block, none);
 }
 
 

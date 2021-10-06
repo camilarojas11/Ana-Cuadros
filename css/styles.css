@@ -69,6 +69,23 @@
     background-position: right center;
     color: #000000; }
 
+.btn-grad--error {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+  background-size: 200% auto;
+  transition: 0.5s;
+  text-align: center;
+  color: #f5f5f5;
+  font-weight: 500;
+  border: none; }
+  .btn-grad--error:hover {
+    text-transform: none;
+    background-position: right center;
+    color: #000000; }
+
 * {
   margin: 0;
   padding: 0;
@@ -94,6 +111,9 @@ textarea {
 
 .point {
   color: #ffa052; }
+
+.point-modif {
+  color: #7C64D5; }
 
 h1 {
   font-size: 3rem; }
@@ -654,3 +674,57 @@ footer .footer-contacto {
     footer .footer-contacto i a {
       font-family: 'Montserrat', sans-serif;
       color: #000000; }
+
+/****************************************************************************************/
+.body-error {
+  background-color: #000; }
+  .body-error .container-error {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 90%;
+    margin: 50px auto; }
+    .body-error .container-error .informacion h1 {
+      font-size: 4rem;
+      font-weight: bolder;
+      animation: fluido 10s ease-in-out infinite;
+      background: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent; }
+
+@keyframes fluido {
+  0% {
+    background-position: 0 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0 50%; } }
+    .body-error .container-error .informacion h2 {
+      color: #f5f5f5; }
+      .body-error .container-error .informacion h2 .verde {
+        color: #f5f5f5; }
+        .body-error .container-error .informacion h2 .verde:hover {
+          animation: fluido 10s ease-in-out infinite;
+          background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+          background-size: 300%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 2.3rem;
+          text-transform: uppercase; }
+
+@keyframes fluido {
+  0% {
+    background-position: 0 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0 50%; } }
+    .body-error .container-error .informacion p {
+      color: #444343; }
+    .body-error .container-error .informacion-imagen p {
+      text-align: center;
+      font-size: 10px; }

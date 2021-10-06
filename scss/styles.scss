@@ -33,6 +33,10 @@ textarea {
     color: map-get($colores, secondary-color);
 }
 
+.point-modif{
+    color: #7C64D5;
+}
+
 @each $heading,
 $size in $headings {
     #{$heading} {
@@ -647,5 +651,47 @@ footer {
             }
         }
 
+    }
+}
+
+/****************************************************************************************/
+//<------------- Pagina Error 404 ------------->
+.body-error {
+    background-color: #000;
+
+    .container-error {
+        @include flex (wrap, center, center);
+        width: 90%;
+        margin: 50px auto;
+
+        .informacion{
+            h1{
+                font-size: 4rem;
+                font-weight: bolder;
+                @include animation-text ((map-get($colores, gradient-color-error)));
+            }
+            h2{
+                color: map-get($colores, primary-color);
+                .verde{
+                    color: map-get($colores, primary-color);
+
+                    &:hover{
+                        @include animation-text(linear-gradient(to right, #43e97b 0%, #38f9d7 100%));
+                        font-size: 2.3rem;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            p{
+                color: rgb(68, 67, 67);
+            }
+        }
+        .informacion-imagen{
+            p{
+                text-align: center;
+                font-size: 10px;
+            }
+        }
     }
 }
