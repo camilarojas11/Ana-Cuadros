@@ -189,7 +189,7 @@ $vh-100: 100vh;
     font-size: 2.1rem;
 
 
-    @if ($color == (rgba(0, 0, 0, 0.432))) {
+    @if ($color==(rgba(0, 0, 0, 0.432))) {
         font-weight: 300;
         font-size: 1.7rem;
     }
