@@ -830,6 +830,14 @@ footer .footer-contacto {
       box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
       -webkit-box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 2px 3px 14px 12px rgba(0, 0, 0, 0.2); }
+  .body-error .container-error .informacion h1 {
+    font-size: 2.7rem; }
+  .body-error .container-error .informacion h2 {
+    font-size: 2.3rem; }
+  .body-error .container-error .informacion-imagen img {
+    width: 300px; }
+  .body-error .container-error .informacion-imagen p {
+    padding-bottom: 1rem; }
   footer .footer-redes {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

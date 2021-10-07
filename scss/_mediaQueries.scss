@@ -163,6 +163,33 @@
         }
     }
 
+    //<--------------------- Error 404 ------------------------>
+
+    .body-error {
+
+        .container-error {
+
+            .informacion {
+                h1 {
+                    font-size: map-get($headings-media, h1);
+                }
+
+                h2 {
+                    font-size: map-get($headings-media, h2);
+                }
+            }
+
+            .informacion-imagen {
+                img {
+                    width: 300px;
+                }
+                p{
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
     //<--------------- Footer ----------------------->
 
     footer {
