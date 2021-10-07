@@ -21,5 +21,11 @@
   "devDependencies": {
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "AOS-library": "https://michalsnik.github.io/aos/",
+    "Grabient": "https://cssgradient.io/gradient-backgrounds/",
+    "Bootstrap": "https://getbootstrap.com/docs/5.1/getting-started/introduction/",
+    "FontAwesome": "https://fontawesome.com/"
   }
 }
