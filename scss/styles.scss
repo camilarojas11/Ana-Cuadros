@@ -33,7 +33,7 @@ textarea {
     color: map-get($colores, secondary-color);
 }
 
-.point-modif{
+.point-modif {
     color: #7C64D5;
 }
 
@@ -664,18 +664,20 @@ footer {
         width: 90%;
         margin: 50px auto;
 
-        .informacion{
-            h1{
+        .informacion {
+            h1 {
                 font-size: 4rem;
                 font-weight: bolder;
                 @include animation-text ((map-get($colores, gradient-color-error)));
             }
-            h2{
+
+            h2 {
                 color: map-get($colores, primary-color);
-                .verde{
+
+                .verde {
                     color: map-get($colores, primary-color);
 
-                    &:hover{
+                    &:hover {
                         @include animation-text(linear-gradient(to right, #43e97b 0%, #38f9d7 100%));
                         font-size: 2.3rem;
                         text-transform: uppercase;
@@ -683,51 +685,20 @@ footer {
                 }
             }
 
-            p{
+            p {
                 color: rgb(68, 67, 67);
             }
         }
-        .informacion-imagen{
-            p{
+
+        .informacion-imagen {
+            p {
                 text-align: center;
                 font-size: 10px;
             }
         }
     }
 }
+
 /**************************************************************************************/
-//<------------- Mensaje Enviado -------------------->
-
-.body-mensaje {
-    background-color: #000;
-
-    .container-mensaje {
-        @include flex (wrap, center, center);
-        width: 90%;
-        margin: 50px auto;
-
-        .container-mensaje__texto{
-            text-align: center;
-            h1{
-                font-size: 3rem;
-                font-weight: bolder;
-                @include animation-text ((map-get($colores, gradient-color-error)));
-            }
-            h2{
-                color: map-get($colores, primary-color);
-            }
-
-            p{
-                color: rgb(68, 67, 67);
-            }
-        }
-
-        .container-mensaje__imagen{
-            img{
-                height: 250px;
-            }
-        }
-    }
-}
 
 @import "mediaQueries";
